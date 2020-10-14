@@ -52,8 +52,13 @@ def show_madlib_form():
     if not_playing:
         return render_template("goodbye.html")
     
-@app.routes('/madlib')
+@app.route('/madlib')
 def show_madlib():
+    color = request.args.get("color")
+    person = request.args.get("person")
+    noun = request.args.get("noun")
+    adjective = request.args.get("adjective")
+
     return render_template("madlib.html")
 
 """ if wants_compliments:
